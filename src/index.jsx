@@ -1,15 +1,12 @@
-import _ from "lodash";
-import printMe from "./print.js";
-function component() {
-  const element = document.createElement("div");
-  const btn = document.createElement("button");
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(["Hello", "webpack"], " ");
-  btn.innerHTML = "Click me and check the console!";
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-  return element;
+import React from "react";
+import ReactDOM from "react-dom";
+import "./style.css";
+function App() {
+  return (
+    <>
+      <h1>Hello World!</h1>
+      <h1 style={{ color: "blue" }}>hoho</h1>
+    </>
+  );
 }
-
-document.body.appendChild(component());
+ReactDOM.render(<App />, document.getElementById("2Chaos"));
