@@ -1,9 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
+  mode: "development",
   entry: {
     index: "./src/index.jsx",
     print: "./src/print.js",
+  },
+  devtool: "inline-source-map",
+  devServer: {
+    static: "./dist",
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,21 +20,41 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
+  optimization: {
+    runtimeChunk: "single",
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx|ts|tsx)$/,
+        exclude: node_modules | bower_components,
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", "@babel/preset-env"],
+            presets: [
+              "@babel/preset-react",
+              "@babel/preset-env",
+              "@babel/preset-typescript",
+            ],
           },
         },
       },
       {
-        test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[name]__[local]--[hash:base64:5]",
+              },
+              importLoaders: 1,
+            },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
