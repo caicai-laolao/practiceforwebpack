@@ -28,7 +28,7 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: ["babel-loader", "esbuild-loader"],
+          loader: "babel-loader",
           options: {
             loader: "jsx",
             target: "es2015",
