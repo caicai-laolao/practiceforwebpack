@@ -1,6 +1,7 @@
 import "./index.css";
 import React, { useState } from "react";
 import TodoListItem from "./RecipeTitle.jsx";
+import { render } from "react-dom";
 
 function App() {
   function change() {
@@ -164,4 +165,4 @@ function App() {
     </article>
   );
 }
-export default App;
+render(<App />, document.getElementById("2Chaos"));

@@ -4,7 +4,6 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/App.tsx",
-    print: "./src/RecipeTitle.tsx",
   },
   devtool: "inline-source-map",
   devServer: {
@@ -29,8 +28,10 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "babel-loader",
+          loader: ["babel-loader", "esbuild-loader"],
           options: {
+            loader: "jsx",
+            target: "es2015",
             presets: [
               "@babel/preset-react",
               "@babel/preset-env",
