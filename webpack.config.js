@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    index: "./src/index.jsx",
-    print: "./src/print.js",
+    index: "./src/App.tsx",
+    print: "./src/RecipeTitle.tsx",
   },
   devtool: "inline-source-map",
   devServer: {
@@ -27,7 +27,7 @@ module.exports = {
     rules: [
       {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: node_modules | bower_components,
+        exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
           options: {
