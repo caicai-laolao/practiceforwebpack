@@ -25,19 +25,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            loader: "jsx",
-            target: "es2015",
-            presets: [
-              "@babel/preset-react",
-              "@babel/preset-env",
-              "@babel/preset-typescript",
-            ],
-          },
+        // Match js, jsx, ts & tsx files
+        test: /\.[jt]sx?$/,
+        loader: "esbuild-loader",
+        options: {
+          // JavaScript version to compile to
+          target: "es2015",
         },
       },
       {

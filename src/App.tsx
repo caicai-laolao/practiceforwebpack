@@ -8,7 +8,6 @@ function App() {
     setTodo([...todo, state]);
     updateState("");
   }
-
   function onDelete(index: any) {
     todo.splice(index, 1);
     setTodo([...todo]);
@@ -19,7 +18,7 @@ function App() {
     todo[index2] = temp;
     setTodo([...todo]);
   }
-  const [todo, setTodo] = useState<Array<string>>([]);
+  const [todo, setTodo] = useState<Array<string>>([""]);
   const [state, updateState] = useState<string>("0");
   const [stateTitle, updateStateTitle] = useState<string>("im title");
   const [stateDesc, updateStateDesc] = useState<string>("im desc");
@@ -116,6 +115,7 @@ function App() {
         {todo.map((item, index) => {
           return (
             <TodoListItem
+              key={index}
               content={item}
               splitLine={(index + 1) % 5 === 0}
               onDelete={onDelete}
@@ -131,7 +131,7 @@ function App() {
             index < clickPageNum * pagesize
           )
             return (
-              <li>
+              <li key={index}>
                 <div>{obj.title}</div>
                 <div
                   style={{
@@ -150,6 +150,7 @@ function App() {
         {new Array(pageNum).fill(null).map((_, index) => {
           return (
             <button
+              key={index}
               style={{
                 background: index !== clickPageNum - 1 ? "white" : "red",
               }}

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 function TodoListItem(props) {
-  const [hover, setHover] = useState('white');
+  const [hover, setHover] = useState("white");
   const [opstate, setOp] = useState(0);
   const [button, setB] = useState(0);
   useEffect(() => {
@@ -12,21 +12,21 @@ function TodoListItem(props) {
     <>
       <li
         onMouseEnter={() => {
-          setHover('yellow');
+          setHover("yellow");
           setB(1);
         }}
         onMouseLeave={() => {
-          setHover('pink');
+          setHover("pink");
           setB(0);
         }}
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          transition: 'all 1s',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          transition: "all 1s",
           opacity: opstate,
           background: hover,
-          color: 'blue',
+          color: "blue",
         }}
       >
         {props.content}
@@ -36,5 +36,4 @@ function TodoListItem(props) {
     </>
   );
 }
-
 export default TodoListItem;
