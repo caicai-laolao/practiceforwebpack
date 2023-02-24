@@ -2,6 +2,7 @@ import "./index.css";
 import React, { useState } from "react";
 import TodoListItem from "./RecipeTitle.jsx";
 import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 
 function App() {
   function change() {
@@ -166,4 +167,6 @@ function App() {
     </article>
   );
 }
-render(<App />, document.getElementById("2Chaos"));
+const container = document.getElementById("2Chaos");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App />);
