@@ -1,9 +1,11 @@
 import "./index.css";
 import React, { useState } from "react";
 import TodoListItem from "./RecipeTitle.jsx";
-import { render } from "react-dom";
 import { createRoot } from "react-dom/client";
-
+import { Button, Space } from "antd";
+import { Input } from "antd";
+import { Pagination } from "antd";
+import { Divider, List, Typography } from "antd";
 function App() {
   function change() {
     setTodo([...todo, state]);
@@ -21,8 +23,6 @@ function App() {
   }
   const [todo, setTodo] = useState<Array<string>>([""]);
   const [state, updateState] = useState<string>("0");
-  const [stateTitle, updateStateTitle] = useState<string>("im title");
-  const [stateDesc, updateStateDesc] = useState<string>("im desc");
   const [clickPageNum, setClickPageNum] = useState<number>(1);
   let total = 0;
   const [todo1, setTode] = useState(() => {
@@ -54,62 +54,31 @@ function App() {
   return (
     <article>
       <h1>Todo</h1>
-      <input
-        value={state}
-        onChange={(e) => {
-          updateState(e.target.value);
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            setTodo([...todo, state]);
-            updateState("");
-          }
-        }}
-      ></input>
-      <button
-        onClick={() => {
-          change();
-        }}
-      >
-        Orz
-      </button>
-      <input
-        value={stateTitle}
-        onChange={(e) => {
-          updateStateTitle(e.target.value);
-        }}
-      ></input>
-      <button
-        onClick={() => {
-          if (stateDesc === "") {
-            window.alert("There is no content in desc");
-            return;
-          }
-          setTode([...todo1, { title: stateTitle, desc: stateDesc }]);
-          updateStateTitle("");
-          updateStateDesc("");
-        }}
-      >
-        Title
-      </button>
-      <input
-        value={stateDesc}
-        onChange={(e) => {
-          updateStateDesc(e.target.value);
-        }}
-      ></input>
-      <button
-        onClick={() => {
-          if (stateTitle === "") {
-            window.alert("There is no content in title");
-            return;
-          }
-          setTode([...todo1, { title: stateTitle, desc: stateDesc }]);
-          updateStateDesc("");
-        }}
-      >
-        Desc
-      </button>
+      <Space>
+        <Input
+          placeholder="请输入"
+          value={state}
+          onChange={(e) => {
+            updateState(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setTodo([...todo, state]);
+              updateState("");
+            }
+          }}
+        ></Input>
+        <Space wrap>
+          <Button
+            type="primary"
+            onClick={() => {
+              change();
+            }}
+          >
+            Orz
+          </Button>
+        </Space>
+      </Space>
 
       <ul>
         <a>{state}</a>
@@ -126,41 +95,30 @@ function App() {
             />
           );
         })}
-        {todo1.map((obj, index) => {
-          if (
-            index > (clickPageNum - 1) * pagesize - 1 &&
-            index < clickPageNum * pagesize
-          )
-            return (
-              <li key={index}>
-                <div>{obj.title}</div>
-                <div
-                  style={{
-                    color: "pink",
-                    padding: 8,
-                    fontSize: 15,
-                  }}
-                >
-                  {obj.desc}
-                </div>
-                <hr></hr>
-              </li>
-            );
-        })}
+        <List
+          size="small"
+          bordered
+          dataSource={todo1}
+          renderItem={(item) => <List.Item>{item}</List.Item>}
+        />
 
         {new Array(pageNum).fill(null).map((_, index) => {
           return (
-            <button
-              key={index}
-              style={{
-                background: index !== clickPageNum - 1 ? "white" : "red",
-              }}
-              onClick={() => {
-                setClickPageNum(index + 1);
-              }}
-            >
-              {index + 1}
-            </button>
+            <Space wrap>
+              {" "}
+              <Button
+                type="primary"
+                key={index}
+                style={{
+                  background: index !== clickPageNum - 1 ? "gray" : "red",
+                }}
+                onClick={() => {
+                  setClickPageNum(index + 1);
+                }}
+              >
+                {index + 1}
+              </Button>
+            </Space>
           );
         })}
       </ul>
