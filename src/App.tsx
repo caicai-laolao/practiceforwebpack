@@ -21,7 +21,7 @@ function App() {
     todo[index2] = temp;
     setTodo([...todo]);
   }
-  const [todo, setTodo] = useState<Array<string>>([""]);
+  const [todo, setTodo] = useState<Array<string>>(["Header"]);
   const [state, updateState] = useState<string>("0");
   const [clickPageNum, setClickPageNum] = useState<number>(1);
   let total = 0;
@@ -39,6 +39,13 @@ function App() {
   /*
    */
   let pagesize = 5;
+  const data = [
+    "Racing car sprays burning fuel into crowd.",
+    "Japanese princess to wed commoner.",
+    "Australian walks 100km after outback crash.",
+    "Man charged over missing wedding girl.",
+    "Los Angeles battles huge wildfires.",
+  ];
   const [pageNum, setPageNum] = useState<number>(() => {
     let i = (total + pagesize - 1) / pagesize;
     while (1) {
@@ -70,7 +77,7 @@ function App() {
         ></Input>
         <Space wrap>
           <Button
-            type="primary"
+            type="dashed"
             onClick={() => {
               change();
             }}
@@ -81,46 +88,22 @@ function App() {
       </Space>
 
       <ul>
-        <a>{state}</a>
-        {todo.map((item, index) => {
-          return (
-            <TodoListItem
-              key={index}
-              content={item}
-              splitLine={(index + 1) % 5 === 0}
-              onDelete={onDelete}
-              index={index}
-              swapItem={swapItem}
-              change={change}
-            />
-          );
-        })}
         <List
-          size="small"
+          style={{}}
+          footer={<div>Footer</div>}
           bordered
-          dataSource={todo1}
+          dataSource={todo}
           renderItem={(item) => <List.Item>{item}</List.Item>}
         />
-
-        {new Array(pageNum).fill(null).map((_, index) => {
-          return (
-            <Space wrap>
-              {" "}
-              <Button
-                type="primary"
-                key={index}
-                style={{
-                  background: index !== clickPageNum - 1 ? "gray" : "red",
-                }}
-                onClick={() => {
-                  setClickPageNum(index + 1);
-                }}
-              >
-                {index + 1}
-              </Button>
-            </Space>
-          );
-        })}
+        <Pagination
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            margin: "12px 8",
+          }}
+          defaultCurrent={1}
+          total={50}
+        />
       </ul>
     </article>
   );
