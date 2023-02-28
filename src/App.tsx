@@ -100,10 +100,9 @@ function App() {
         pagination={{
           position,
           align,
-          current: 1,
-          defaultCurrent: 3,
-          total: 50,
-          pageSize: 10,
+          defaultCurrent: 1,
+          total: todo.length,
+          pageSize: 5,
           onChange: (page) => {},
         }}
       />
