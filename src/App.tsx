@@ -6,6 +6,10 @@ import { Button, Space } from "antd";
 import { Input } from "antd";
 import { Pagination } from "antd";
 import { List } from "antd";
+import {
+  PaginationAlign,
+  PaginationPosition,
+} from "antd/es/pagination/Pagination";
 
 function App() {
   function change() {
@@ -53,6 +57,8 @@ function App() {
       }
     }
   });
+  const [position, setPosition] = useState<PaginationPosition>("bottom");
+  const [align, setAlign] = useState<PaginationAlign>("end");
   //Math.floor((total + pagesize - 1) / pagesize));
   return (
     <article>
@@ -91,15 +97,15 @@ function App() {
         bordered
         dataSource={todo}
         renderItem={(item) => <List.Item>{item}</List.Item>}
-      />
-      <Pagination
-        style={{
-          display: "flex",
-          justifyContent: "flex-end",
-          margin: "12px 8px",
+        pagination={{
+          position,
+          align,
+          current: 1,
+          defaultCurrent: 3,
+          total: 50,
+          pageSize: 10,
+          onChange: (page) => {},
         }}
-        defaultCurrent={1}
-        total={50}
       />
     </article>
   );
