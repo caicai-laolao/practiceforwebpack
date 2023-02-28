@@ -5,7 +5,8 @@ import { createRoot } from "react-dom/client";
 import { Button, Space } from "antd";
 import { Input } from "antd";
 import { Pagination } from "antd";
-import { Divider, List, Typography } from "antd";
+import { List } from "antd";
+
 function App() {
   function change() {
     setTodo([...todo, state]);
@@ -21,9 +22,10 @@ function App() {
     todo[index2] = temp;
     setTodo([...todo]);
   }
-  const [todo, setTodo] = useState<Array<string>>(["Header"]);
-  const [state, updateState] = useState<string>("0");
-  const [clickPageNum, setClickPageNum] = useState<number>(1);
+
+  const [todo, setTodo] = useState<Array<string>>([]);
+  const [state, updateState] = useState<string>("");
+  const [clickPageNum, setClickPageNum] = useState<number>();
   let total = 0;
   const [todo1, setTode] = useState(() => {
     const todoList = [];
@@ -39,13 +41,7 @@ function App() {
   /*
    */
   let pagesize = 5;
-  const data = [
-    "Racing car sprays burning fuel into crowd.",
-    "Japanese princess to wed commoner.",
-    "Australian walks 100km after outback crash.",
-    "Man charged over missing wedding girl.",
-    "Los Angeles battles huge wildfires.",
-  ];
+
   const [pageNum, setPageNum] = useState<number>(() => {
     let i = (total + pagesize - 1) / pagesize;
     while (1) {
@@ -63,6 +59,7 @@ function App() {
       <h1>Todo</h1>
       <Space>
         <Input
+          style={{ width: 1293 }}
           placeholder="请输入"
           value={state}
           onChange={(e) => {
@@ -87,24 +84,23 @@ function App() {
         </Space>
       </Space>
 
-      <ul>
-        <List
-          style={{}}
-          footer={<div>Footer</div>}
-          bordered
-          dataSource={todo}
-          renderItem={(item) => <List.Item>{item}</List.Item>}
-        />
-        <Pagination
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            margin: "12px 8",
-          }}
-          defaultCurrent={1}
-          total={50}
-        />
-      </ul>
+      <List
+        style={{ marginTop: 24 }}
+        header={<div>Header</div>}
+        footer={<div>Footer</div>}
+        bordered
+        dataSource={todo}
+        renderItem={(item) => <List.Item>{item}</List.Item>}
+      />
+      <Pagination
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          margin: "12px 8px",
+        }}
+        defaultCurrent={1}
+        total={50}
+      />
     </article>
   );
 }
