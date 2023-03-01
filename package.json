@@ -1,11 +1,11 @@
 {
-  "name": "webpack-demo",
-  "version": "1.0.0",
-  "private": "true",
-  "description": "",
+  "name": "webpack_react_todo_list",
+  "version": "1.0.3",
+  "description": "react+antd下的todolist",
   "keywords": [],
   "license": "ISC",
   "author": "",
+  "main": "index.js",
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
