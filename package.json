@@ -1,11 +1,17 @@
 {
-  "name": "webpack_react_todo_list",
+  "name": "@2chaos/webpack_react_todolist",
   "version": "1.0.3",
   "description": "react+antd下的todolist",
   "keywords": [],
   "license": "ISC",
   "author": "",
   "main": "index.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
+  ],
   "scripts": {
     "build": "webpack",
     "dev": "webpack-dev-server",
