@@ -101,7 +101,6 @@ function App() {
           defaultCurrent: 1,
           total: todo.length,
           pageSize: 5,
-          onChange: (page) => {},
         }}
       />
     </article>
