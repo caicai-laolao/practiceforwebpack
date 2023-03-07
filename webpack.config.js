@@ -55,7 +55,7 @@ module.exports = {
         type: "asset/resource",
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
