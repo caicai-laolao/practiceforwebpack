@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 function TodoListItem(props) {
   const [hover, setHover] = useState("white");
   const [opstate, setOp] = useState(0);
-  const [button, setB] = useState(0);
+  const [_, setB] = useState(0);
   useEffect(() => {
     setOp(1);
   }, []);
