@@ -106,5 +106,7 @@ function App() {
     </article>
   );
 }
-
+const container = document.getElementById("2Chaos");
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(<App />);
 export default App;
