@@ -13,7 +13,7 @@
     "*.js"
   ],
   "scripts": {
-    "babel": "babel ./test -d ./testr",
+    "babel": "babel ./src -d ./lib",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "start": "webpack serve --open",
