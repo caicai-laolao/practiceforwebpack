@@ -22,7 +22,7 @@ if (result.emitSkipped || result.diagnostics.length > 0) {
   console.error(result.diagnostics);
   process.exit(1);
 }
-
+// testttt
 // 复制其他文件到编译目录
 fs.readdirSync(sourceDir)
   .filter((filename) => !filename.endsWith(".ts"))
