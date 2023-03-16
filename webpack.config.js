@@ -25,6 +25,7 @@ module.exports = {
   module: {
     rules: [
       {
+        //.
         // Match js, jsx, ts & tsx files
         test: /\.[jt]sx?$/,
         loader: "esbuild-loader",
