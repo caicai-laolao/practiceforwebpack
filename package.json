@@ -6,6 +6,7 @@
   "license": "ISC",
   "author": "",
   "main": "./lib/index.js",
+  "module": "es/index.js",
   "files": [
     "dist/*",
     "lib/*",
@@ -13,7 +14,8 @@
     "*.js"
   ],
   "scripts": {
-    "babel": "babel ./src -d ./lib",
+    "babel-es": "babel src --out-dir es",
+    "babel-lib": "babel src --out-dir lib",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "start": "webpack serve --open",
