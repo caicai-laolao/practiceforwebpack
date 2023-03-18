@@ -14,8 +14,8 @@
     "*.js"
   ],
   "scripts": {
-    "babel-es": "babel src --out-dir es",
-    "babel-lib": "babel src --out-dir lib",
+    "babel-cjs": "babel src -d lib --ignore '**/*.test.js' --config-file .babelrc.cjs",
+    "babel-es": "babel src -d lib --ignore '**/*.test.js' --config-file .babelrc.es",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "start": "webpack serve --open",
