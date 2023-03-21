@@ -14,8 +14,8 @@
     "*.js"
   ],
   "scripts": {
-    "babel-cjs": "cross-env NODE_ENV=production BABEL_ENV=commonjs babel src -d lib",
-    "babel-es": "cross-env NODE_ENV=production BABEL_ENV=esm babel src -d es",
+    "babel-commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib",
+    "babel-esm": "cross-env BABEL_ENV=esm babel src -d es",
     "build": "webpack",
     "dev": "webpack-dev-server",
     "start": "webpack serve --open",
