@@ -14,9 +14,9 @@
     "*.js"
   ],
   "scripts": {
-    "babel-commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib",
-    "babel-esm": "cross-env BABEL_ENV=esm babel src -d es",
     "build": "webpack",
+    "build-esm": "babel src -d dist/esm --ignore **/*.test.js --env-name esm",
+    "build-lib": "babel src -d dist/lib --ignore **/*.test.js",
     "dev": "webpack-dev-server",
     "start": "webpack serve --open",
     "test": "echo \"Error: no test specified\" && exit 1",

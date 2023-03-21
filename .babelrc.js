@@ -1,6 +1,6 @@
 module.exports = function (api) {
   const isESM = api.env("esm");
-
+  console.log(isESM);
   return {
     presets: [
       [
