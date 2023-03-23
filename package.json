@@ -1,13 +1,13 @@
 {
   "name": "@2chaos/webpack_react_todolist",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "webpack_react_todolist",
   "keywords": [],
   "license": "ISC",
   "author": "",
   "main": "./lib/index.js",
   "module": "es/index.js",
-  "typings": "./dist/types/src/App.d.ts",
+  "typings": "./dist/types/index.d.ts",
   "files": [
     "dist/*",
     "lib/*",
