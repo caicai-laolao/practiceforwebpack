@@ -1,7 +1,7 @@
 const babel = require("@babel/core");
 const glob = require("glob");
 const fs = require("fs");
-
+//test
 const files = glob.sync("./src/**/*.{js,jsx,tsx,ts}", { nodir: true });
 
 files.forEach((file) => {
