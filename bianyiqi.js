@@ -2,7 +2,7 @@ const babel = require("@babel/core");
 const glob = require("glob");
 const fs = require("fs");
 const files = glob.sync("./src/**/*.{js,jsx,tsx,ts}", { nodir: true });
-
+//test 2
 files.forEach((file) => {
   const input = fs.readFileSync(file, "utf8");
 
