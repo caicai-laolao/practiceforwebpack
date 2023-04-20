@@ -1,4 +1,3 @@
-import "./index.css";
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Button, Space } from "antd";
@@ -106,7 +105,7 @@ function App() {
     </article>
   );
 }
-const container = document.getElementById("2Chaos");
-const root = createRoot(container);
-root.render(<App />);
+//const container = document.getElementById("2Chaos");
+//const root = createRoot(container);
+//root.render(<App />);
 export default App;
