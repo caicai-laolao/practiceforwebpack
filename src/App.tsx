@@ -105,7 +105,7 @@ function App() {
     </article>
   );
 }
-//const container = document.getElementById("2Chaos");
-//const root = createRoot(container);
-//root.render(<App />);
+const container = document.getElementById("2Chaos");
+const root = createRoot(container);
+root.render(<App />);
 export default App;
