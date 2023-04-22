@@ -1,7 +1,7 @@
 {
   "name": "@2chaos/webpack_react_todolist",
-  "version": "1.0.31",
-  "description": "将docment注释掉",
+  "version": "1.0.33",
+  "description": "加载了lib和esm文件",
   "keywords": [],
   "license": "ISC",
   "author": "",
