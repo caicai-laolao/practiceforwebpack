@@ -1,7 +1,7 @@
 {
   "name": "@2chaos/webpack_react_todolist",
-  "version": "1.0.33",
-  "description": "加载了lib和esm文件",
+  "version": "1.0.35",
+  "description": "修改了tscongif.json",
   "keywords": [],
   "license": "ISC",
   "author": "",
