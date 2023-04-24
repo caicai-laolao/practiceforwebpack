@@ -28,32 +28,10 @@ function App() {
   const [state, updateState] = useState<string>("");
   const [clickPageNum, setClickPageNum] = useState<number>();
   let total = 0;
-  const [todo1, setTode] = useState(() => {
-    const todoList = [];
-    for (let index = 0; index < 100; index++) {
-      total++;
-      todoList.push({
-        title: "title" + index,
-        desc: "desc" + index,
-      });
-    }
-    return todoList;
-  });
   /*
    */
   let pagesize = 5;
 
-  const [pageNum, setPageNum] = useState<number>(() => {
-    let i = (total + pagesize - 1) / pagesize;
-    while (1) {
-      if (i % 1 === 0) {
-        return i;
-      } else {
-        total = total - 1;
-        i = (total + pagesize - 1) / pagesize;
-      }
-    }
-  });
   const [position, setPosition] = useState<PaginationPosition>("bottom");
   const [align, setAlign] = useState<PaginationAlign>("end");
   //Math.floor((total + pagesize - 1) / pagesize));
@@ -105,7 +83,7 @@ function App() {
     </article>
   );
 }
-//const container = document.getElementById("2Chaos");
+//const container = document.getElementById("2Chaos")!;
 //const root = createRoot(container);
 //root.render(<App />);
 export default App;
