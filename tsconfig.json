@@ -1,8 +1,4 @@
 {
-  "include": [
-    "dist/**/*.ts",
-    "node_modules/@types"
-  ],
   "compilerOptions": {
     "outDir": "./dist/",
     "noImplicitAny": true,
@@ -16,5 +12,4 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   }
-  
 }
