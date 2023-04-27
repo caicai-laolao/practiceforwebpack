@@ -1,7 +1,7 @@
 {
   "name": "@2chaos/webpack_react_todolist",
   "version": "1.0.39",
-  "description": "改变了types文件的位置",
+  "description": "在esm,lib文件夹添加声明文件",
   "keywords": [],
   "license": "ISC",
   "author": "",
