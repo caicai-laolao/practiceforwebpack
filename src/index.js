@@ -3,14 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.App2 = void 0;
-// index.tsx
-var App1 = function App1() {
-  require("./App.js");
-};
-var App2 = function App2() {
-  require("./RecipeTitle.js");
-};
-exports.App2 = App2;
-var _default = App1;
+Object.defineProperty(exports, "TodoListItem", {
+  enumerable: true,
+  get: function get() {
+    return _RecipeTitle["default"];
+  }
+});
+exports["default"] = void 0;
+var _App = _interopRequireDefault(require("./App.js"));
+var _RecipeTitle = _interopRequireDefault(require("./RecipeTitle.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _default = _App["default"];
 exports["default"] = _default;
