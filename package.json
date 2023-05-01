@@ -1,7 +1,7 @@
 {
   "name": "@2chaos/webpack_react_todolist",
-  "version": "1.0.39",
-  "description": "在esm,lib文件夹添加声明文件",
+  "version": "1.0.40",
+  "description": "规范了入口文件的书写",
   "keywords": [],
   "license": "ISC",
   "author": "",

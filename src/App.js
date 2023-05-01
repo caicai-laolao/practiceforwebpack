@@ -47,45 +47,17 @@ function App() {
     clickPageNum = _useState6[0],
     setClickPageNum = _useState6[1];
   var total = 0;
-  var _useState7 = (0, _react.useState)(function () {
-      var todoList = [];
-      for (var index = 0; index < 100; index++) {
-        total++;
-        todoList.push({
-          title: "title" + index,
-          desc: "desc" + index
-        });
-      }
-      return todoList;
-    }),
-    _useState8 = _slicedToArray(_useState7, 2),
-    todo1 = _useState8[0],
-    setTode = _useState8[1];
   /*
    */
   var pagesize = 5;
-  var _useState9 = (0, _react.useState)(function () {
-      var i = (total + pagesize - 1) / pagesize;
-      while (1) {
-        if (i % 1 === 0) {
-          return i;
-        } else {
-          total = total - 1;
-          i = (total + pagesize - 1) / pagesize;
-        }
-      }
-    }),
+  var _useState7 = (0, _react.useState)("bottom"),
+    _useState8 = _slicedToArray(_useState7, 2),
+    position = _useState8[0],
+    setPosition = _useState8[1];
+  var _useState9 = (0, _react.useState)("end"),
     _useState10 = _slicedToArray(_useState9, 2),
-    pageNum = _useState10[0],
-    setPageNum = _useState10[1];
-  var _useState11 = (0, _react.useState)("bottom"),
-    _useState12 = _slicedToArray(_useState11, 2),
-    position = _useState12[0],
-    setPosition = _useState12[1];
-  var _useState13 = (0, _react.useState)("end"),
-    _useState14 = _slicedToArray(_useState13, 2),
-    align = _useState14[0],
-    setAlign = _useState14[1];
+    align = _useState10[0],
+    setAlign = _useState10[1];
   //Math.floor((total + pagesize - 1) / pagesize));
   return /*#__PURE__*/_react["default"].createElement("article", null, /*#__PURE__*/_react["default"].createElement("h1", null, "Todo"), /*#__PURE__*/_react["default"].createElement(_antd.Space, null, /*#__PURE__*/_react["default"].createElement(_antd.Input, {
     style: {
@@ -129,7 +101,7 @@ function App() {
     }
   }));
 }
-//const container = document.getElementById("2Chaos");
+//const container = document.getElementById("2Chaos")!;
 //const root = createRoot(container);
 //root.render(<App />);
 var _default = App;
