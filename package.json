@@ -1,7 +1,7 @@
 {
   "name": "@2chaos/webpack_react_todolist",
-  "version": "1.0.41",
-  "description": "删除了多余步骤",
+  "version": "1.0.42",
+  "description": "html添加header",
   "keywords": [],
   "license": "ISC",
   "author": "",
